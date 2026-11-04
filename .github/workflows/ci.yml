@@ -34,8 +34,12 @@ jobs:
 
       - name: Tap this checkout
         # `brew tap <name> <url>` clones from any git URL, a local path included,
-        # so the audit sees exactly the commit under test.
-        run: brew tap bioedca/tlilli "$GITHUB_WORKSPACE"
+        # so the audit sees exactly the commit under test. Homebrew treats a
+        # third-party tap as untrusted until `brew trust` runs, and `brew audit`
+        # refuses to load a cask from an untrusted tap.
+        run: |
+          brew tap bioedca/tlilli "$GITHUB_WORKSPACE"
+          brew trust bioedca/tlilli
 
       - name: brew style
         # By tap token, not by file: `brew style` rejects a cask file that is

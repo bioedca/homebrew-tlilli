@@ -15,7 +15,9 @@ brew tap bioedca/tlilli
 brew install --cask tlilli
 ```
 
-Requires macOS 13 (Ventura) or newer, on Apple silicon or Intel.
+Requires macOS 13 (Ventura) or newer, on Apple silicon or Intel. Recent Homebrew versions refuse to load
+casks from a third-party tap until it is trusted; if `brew install` says so, review `Casks/tlilli.rb` and run
+`brew trust bioedca/tlilli`.
 
 ## The app is unsigned
 
