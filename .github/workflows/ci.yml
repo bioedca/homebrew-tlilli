@@ -38,7 +38,9 @@ jobs:
         run: brew tap bioedca/tlilli "$GITHUB_WORKSPACE"
 
       - name: brew style
-        run: brew style --cask Casks/tlilli.rb
+        # By tap token, not by file: `brew style` rejects a cask file that is
+        # not inside a tap ("Homebrew requires casks to be in a tap").
+        run: brew style --cask bioedca/tlilli/tlilli
 
       - name: brew audit
         # `--online` downloads the asset and checks the checksum and livecheck.
