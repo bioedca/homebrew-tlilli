@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# CodeRabbit in the Homebrew tap bioedca/homebrew-tlilli, a companion repository of bioedca/Tlilli.
+# Policy: D-089 in bioedca/Tlilli (docs/prd/32-code-review.md §2). Every CodeRabbit run counts
+# against the maintainer's one seat across all repositories, so nothing runs on its own here:
+# no automatic reviews, no review of each push and no automatic chat replies. Ask for a review
+# with `@coderabbitai review` only when a change is load-bearing. Without this file CodeRabbit
+# falls back to the account's dashboard settings, which reviewed pull requests automatically.
+language: "en-US"
+reviews:
+  high_level_summary: true
+  poem: false
+  review_status: true
+  auto_review:
+    enabled: false
+    auto_incremental_review: false
+    drafts: false
+chat:
+  # Off: CodeRabbit answers only when tagged, and each answer counts against the seat (D-089).
+  auto_reply: false
